@@ -45,7 +45,7 @@ const StoreContextProvider = (props) => {
     const [food, setfood] = useState([])
     const [Orderloading, setOrderloading] = useState(true)
     const navigate = useNavigate();
-    const url = 'http://localhost:4000'
+    const url = 'https://fastfoodproject.onrender.com'
 
 
     const getfood = () => {
