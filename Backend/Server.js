@@ -19,7 +19,7 @@ Db();
 //middleware
 // Middleware
 app.use(cors({
-    origin: 'https://mernfastfood.onrender.com/', // Allow requests from this origin
+    origin: 'https://mernfastfood.onrender.com', // Allow requests from this origin
   }));
   app.use(bodyParser.json());
   app.use(express.json());
