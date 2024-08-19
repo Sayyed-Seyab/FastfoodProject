@@ -19,7 +19,7 @@ Db();
 //middleware
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
+    origin: 'https://fastfoodproject.onrender.com', // Allow requests from this origin
   }));
   app.use(bodyParser.json());
   app.use(express.json());
