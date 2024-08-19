@@ -23,7 +23,7 @@ const CashOnDeliveryOrder = async(req, res)=>{
 }
 // Place user order form frontend
 const PlaceUserOrder = async(req, res)=>{
-    const Frontend_url = 'https://fastfoodproject.onrender.com'
+    const Frontend_url = 'https://mernfastfood.onrender.com/'
     try{
         const NewOrder = new OrderModel({
             UserId:req.body.UserId,
