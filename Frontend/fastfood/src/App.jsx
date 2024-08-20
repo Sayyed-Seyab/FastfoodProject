@@ -24,11 +24,10 @@ import { Box, Grid } from '@mui/material'
 import Sidebar from './components/DashboardSidebar/Sidebar'
 import { StoreContext } from './components/Context/Storecontext'
 
-
+// website hosted url
+// https://mernfastfood.onrender.com
 
 function App() {
-  const {role}= useContext(StoreContext)
-  const [count, setCount] = useState(0)
   const location = useLocation();
   const isDashboardRoute = location.pathname.startsWith('/Dashboard');
 

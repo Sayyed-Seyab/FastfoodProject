@@ -67,7 +67,8 @@ export default function Topcategory({ category, setcategory }) {
                             className='Categorystack'>
                             {categories.map((cat) => {
                                 return (
-                                    <DemoPaper onClick={() => getname(cat.name)} square={false}>
+                                    <DemoPaper   onClick={() => getname(cat.name)} square={false}>
+                                        <Box>
                                         <Box className='category' sx={{width:'100px',background:'wheat',padding:1,borderRadius:15,}}>
                                             <img
                                                 className={category === cat.name ? 'Active' : ''}
@@ -87,6 +88,7 @@ export default function Topcategory({ category, setcategory }) {
                                                 }}>
                                                 {cat.name}
                                             </Typography>
+                                        </Box>
                                         </Box>
                                     </DemoPaper>
 

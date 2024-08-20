@@ -38,7 +38,8 @@ export default function Login({ open, setOpen,  }) {
     SignUpObj,
     SignInObj,
     openModal,
-    setopnModal, } = useContext(StoreContext);
+    setopnModal,
+    setError, } = useContext(StoreContext);
 
 
   const handlerChange = (event) => {
@@ -71,13 +72,15 @@ export default function Login({ open, setOpen,  }) {
   const openSinup = () => {
     setopensinUpModal(true);
     setOpen(false)
-    setsignupdata(SignUpObj)
+    setsignindata(SignInObj)
+    setError('')
   }
 
   const openLogin = () => {
     setopensinUpModal(false);
     setOpen(true)
-    setsignindata(SignInObj)
+    setsignupdata(SignUpObj)
+    setError('')
   }
 
   return (
@@ -275,7 +278,7 @@ export default function Login({ open, setOpen,  }) {
                       name="Email"
                       autoComplete="email"
                       autoFocus
-                      value={signindata.Name}
+                      value={signindata.Email}
                       onChange={handleOpenLogin}
                     />
                     <TextField

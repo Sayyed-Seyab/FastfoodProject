@@ -20,11 +20,11 @@ export default function Dashboard() {
         </Box>
         <Box >
            <Grid container gap={7}>
-           <Grid xs={12} sm={3} md={3} lg={3} xl={4}>
+           <Grid xs={12} sm={3} md={3} lg={3} xl={3}>
                {role == 'admin'?  <Sidebar/> : null}
             </Grid>
 
-            <Grid xs={12} sm={9} md={8} lg={8} xl={8}>
+            <Grid xs={12} sm={8} md={8} lg={8} xl={8}>
           {role == 'admin'?   <DashboardNav/> : null}
            <Box mt={3}>
            <Routes>

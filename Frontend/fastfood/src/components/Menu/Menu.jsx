@@ -60,19 +60,25 @@ export default function Menu({category}) {
             <CardMedia
               component="img"
               alt="green iguana"
-              width="200"
-              height="150"
+            
+              sx={{
+               padding:5,
+                height: { xs: 100,padding:20, sm: 120, md: 120, }, // responsive height based on breakpoints
+                width: '80%', // make the image take the full width of the card
+                objectFit: 'cover',
+                 // maintain aspect ratio and cover the container
+              }}
               image={`${url}/images/`+item.Image}
             />
             <CardContent>
               <Typography sx={{fontFamily:'Outfit'}} gutterBottom variant="h5" component="div">
-               ${item.Name}
+              {item.Name}
               </Typography>
               <Typography sx={{fontFamily:'Outfit'}} variant="body2" color="text.secondary">
                 {item.Description}
               </Typography>
               <Typography sx={{fontFamily:'Outfit',color:'tomato'}} variant="body2" color="text.secondary">
-                {item.Price}
+              ${item.Price}
               </Typography>
             </CardContent>
             <Box sx={{display:'flex', justifyContent:'center'}}>

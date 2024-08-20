@@ -45,7 +45,8 @@ const StoreContextProvider = (props) => {
     const [food, setfood] = useState([])
     const [Orderloading, setOrderloading] = useState(true)
     const navigate = useNavigate();
-    const url = 'https://fastfoodproject.onrender.com'
+    const url = 'http://localhost:4000'
+    //  const url = 'https://fastfoodproject.onrender.com'
 
 
     const getfood = () => {
@@ -148,9 +149,6 @@ const StoreContextProvider = (props) => {
         }
         axios.post(`${url}/api/user/login`, signindata)
             .then((res) => {
-                if (res.data.Message) {
-                    setError(res.data.Message);
-                }
                 if (res.data.token) {
                     console.log(res.data.token)
                     setsignindata(SignInObj)
@@ -163,13 +161,18 @@ const StoreContextProvider = (props) => {
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
                     setopnModal(false)
-                    if (role === 'admin')
-                        toast.success(decodedtoken.Name + " " + "login successfully")
-                    return navigate('/Dashboard/stats');
-
+                    if (decodedtoken.role === 'admin'){
+                        
+                  return  navigate('/Dashboard/stats');
+                }else{
+                    toast.success(decodedtoken.Name + " " + "login successfully")
                 }
-                setopnModal(false)
-                toast.success(decodedtoken.Name + " " + "login successfully")
+                   
+                }else if(res.data.Message){
+                   
+                        setError(res.data.Message);
+                  
+                }
             }).catch(error => {
                 console.log(error)
             })
@@ -323,6 +326,7 @@ const StoreContextProvider = (props) => {
         setImage,
         setOrders,
         url,
+        setError,
 
 
     }

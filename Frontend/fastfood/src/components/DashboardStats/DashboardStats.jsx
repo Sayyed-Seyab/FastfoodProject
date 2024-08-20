@@ -45,8 +45,8 @@ export default function DashboardStats() {
 
   return (
     <div>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography  className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
@@ -56,7 +56,7 @@ export default function DashboardStats() {
           </CardContent>
         </Card>
 
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
@@ -66,7 +66,7 @@ export default function DashboardStats() {
           </CardContent>
         </Card>
 
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
@@ -76,7 +76,7 @@ export default function DashboardStats() {
           </CardContent>
         </Card>
 
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
@@ -86,7 +86,7 @@ export default function DashboardStats() {
           </CardContent>
         </Card>
 
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
@@ -96,7 +96,7 @@ export default function DashboardStats() {
           </CardContent>
         </Card>
 
-        <Card className='Card' sx={{ minWidth: 275, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <Card className='Card' sx={{ minWidth: 265, height: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <CardContent>
             <Box>
               <Typography className='Cardtxt' sx={{ fontSize: 20, textAlign: 'center',fontFamily:'Outfit' }} color="text.secondary">
