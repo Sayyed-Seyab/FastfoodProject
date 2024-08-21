@@ -51,8 +51,8 @@ const StoreContextProvider = (props) => {
     // https://mernfastfood.onrender.com frontend
 
 
-    const url = 'http://localhost:4000'
-    //  const url = 'https://fastfoodproject.onrender.com'
+    // const url = 'http://localhost:4000'
+     const url = 'https://fastfoodproject.onrender.com'
 
     //  const url = 'https://fastfoodproject.onrender.com'
 
