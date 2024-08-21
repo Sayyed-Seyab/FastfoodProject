@@ -45,14 +45,12 @@ const StoreContextProvider = (props) => {
     const [food, setfood] = useState([])
     const [Orderloading, setOrderloading] = useState(true)
     const navigate = useNavigate();
-<<<<<<< HEAD
+
     // const url = 'http://localhost:4000'
     //  const url = 'https://fastfoodproject.onrender.com' backend
     // https://mernfastfood.onrender.com frontend
-=======
-    // const url = 'http://localhost:4000'
      const url = 'https://fastfoodproject.onrender.com'
->>>>>>> bf1f23bd1649fb5c730402f9666c0382f3205502
+
 
 
     const getfood = () => {
@@ -168,17 +166,10 @@ const StoreContextProvider = (props) => {
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
                     if (decodedtoken.role === 'admin'){
-<<<<<<< HEAD
                         setopnModal(false)
                   return  navigate('/Dashboard/stats');
                 }else{
-                    setopnModal(false)
-=======
                          setopnModal(false)
-                  return  navigate('/Dashboard/stats');
-                }else{
-                         setopnModal(false)
->>>>>>> bf1f23bd1649fb5c730402f9666c0382f3205502
                     toast.success(decodedtoken.Name + " " + "login successfully")
                 }
                    
