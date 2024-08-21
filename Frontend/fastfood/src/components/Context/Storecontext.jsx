@@ -166,6 +166,7 @@ const StoreContextProvider = (props) => {
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
                     if (decodedtoken.role === 'admin'){
+                          setMessage(decodedtoken.Name+ " " + "login successfully")
                         setopnModal(false)
                   return  navigate('/Dashboard/stats');
                 }else{
@@ -295,6 +296,7 @@ const StoreContextProvider = (props) => {
         addToCart,
         removeCartItem,
         Message,
+        setMessage,
         id,
         cartItems,
         incQuantity,
