@@ -13,6 +13,7 @@ const creatToken = (id, Name, role,Image)=>{
 
 }
 const loginUser = async(req, res)=>{
+    const {Email,Password} = req.body;
     try{
         const user = await UserModel.findOne({Email});
         if(!user){
@@ -20,13 +21,13 @@ const loginUser = async(req, res)=>{
         }
         const Pass = await bcrypt.compare(Password, user.Password);
         if(!Pass){
-            res.json({success:false, Message:'Invalid credentials'})
+           return res.json({success:false, Message:'Invalid credentials'})
         }
         const token = creatToken(user._id, user.Name, user.role, user.Image)
         res.cookie('token',token,{
             httpOnly:true,
         })
-        res.json({success:true, token})
+        return res.json({success:true, token})
        
        
     }catch (error){

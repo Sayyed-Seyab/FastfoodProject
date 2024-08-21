@@ -46,7 +46,8 @@ const StoreContextProvider = (props) => {
     const [Orderloading, setOrderloading] = useState(true)
     const navigate = useNavigate();
     const url = 'http://localhost:4000'
-    //  const url = 'https://fastfoodproject.onrender.com'
+    //  const url = 'https://fastfoodproject.onrender.com' backend
+    // https://mernfastfood.onrender.com frontend
 
 
     const getfood = () => {
@@ -126,6 +127,7 @@ const StoreContextProvider = (props) => {
                     setsignupdata(SignUpObj)
                     setopensinUpModal(false)
                     console.log(res.data.token)
+                    toast.success('Account created successfully')
                 }
             }).catch(error => {
                 console.log(error)
@@ -160,11 +162,11 @@ const StoreContextProvider = (props) => {
                     setUser(decodedtoken.user);
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
-                    setopnModal(false)
                     if (decodedtoken.role === 'admin'){
-                        
+                        setopnModal(false)
                   return  navigate('/Dashboard/stats');
                 }else{
+                    setopnModal(false)
                     toast.success(decodedtoken.Name + " " + "login successfully")
                 }
                    
