@@ -60,6 +60,7 @@ function Navbar() {
     GetOrders,
     setcartItems,
     getCart,
+    Message,
   } = React.useContext(StoreContext);
   const location = useLocation();
   const Home = location.pathname.startsWith('/');
@@ -196,7 +197,10 @@ function Navbar() {
     };
     React.useEffect(() => {
       getToken();
-    }, [])
+      if(Message){
+        toast.success(Message)
+      }
+    }, [Message])
 
     return (
       <div >
