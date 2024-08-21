@@ -50,8 +50,12 @@ const StoreContextProvider = (props) => {
     //  const url = 'https://fastfoodproject.onrender.com' backend
     // https://mernfastfood.onrender.com frontend
 
+
     const url = 'http://localhost:4000'
     //  const url = 'https://fastfoodproject.onrender.com'
+
+    //  const url = 'https://fastfoodproject.onrender.com'
+
 
 
 
@@ -167,6 +171,7 @@ const StoreContextProvider = (props) => {
                     setUser(decodedtoken.user);
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
+
                     if (decodedtoken.role === 'admin') {
                         setMessage(decodedtoken.Name+ " " + "login successfully")
                         setopnModal(false)
@@ -180,6 +185,20 @@ const StoreContextProvider = (props) => {
                 } else if (res.data.Message) {
 
                     setError(res.data.Message);
+
+
+                    if (decodedtoken.role === 'admin'){
+                        setopnModal(false)
+                  return  navigate('/Dashboard/stats');
+                }else{
+                         setopnModal(false)
+                    toast.success(decodedtoken.Name + " " + "login successfully")
+                }
+                   
+                }else if(res.data.Message){
+                   
+                        setError(res.data.Message);
+                  
 
                 }
             }).catch(error => {
