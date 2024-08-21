@@ -4,9 +4,10 @@ import './style.css'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import axios from 'axios';
 import { StoreContext } from '../Context/Storecontext';
+import { toast } from 'react-toastify';
 
 export default function Myorders() {
-  const { UserId, user, url } = useContext(StoreContext)
+  const { UserId, user, url,Message } = useContext(StoreContext)
   const [Orders, setOrders] = useState([])
 
   const GetOrders = async () => {
@@ -21,7 +22,11 @@ export default function Myorders() {
     if (user) {
       GetOrders()
     }
-  }, [])
+    if(Message){
+      toast.success(Message)
+     
+    }
+  }, [Message])
   return (
     <div className='cart'>
       <Container sx={{marginTop:'50px'}}>

@@ -45,14 +45,14 @@ const StoreContextProvider = (props) => {
     const [food, setfood] = useState([])
     const [Orderloading, setOrderloading] = useState(true)
     const navigate = useNavigate();
-<<<<<<< HEAD
+
     // const url = 'http://localhost:4000'
     //  const url = 'https://fastfoodproject.onrender.com' backend
     // https://mernfastfood.onrender.com frontend
-=======
-    // const url = 'http://localhost:4000'
-     const url = 'https://fastfoodproject.onrender.com'
->>>>>>> bf1f23bd1649fb5c730402f9666c0382f3205502
+
+    const url = 'http://localhost:4000'
+    //  const url = 'https://fastfoodproject.onrender.com'
+
 
 
     const getfood = () => {
@@ -167,25 +167,20 @@ const StoreContextProvider = (props) => {
                     setUser(decodedtoken.user);
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
-                    if (decodedtoken.role === 'admin'){
-<<<<<<< HEAD
+                    if (decodedtoken.role === 'admin') {
+                        setMessage(decodedtoken.Name+ " " + "login successfully")
                         setopnModal(false)
-                  return  navigate('/Dashboard/stats');
-                }else{
-                    setopnModal(false)
-=======
-                         setopnModal(false)
-                  return  navigate('/Dashboard/stats');
-                }else{
-                         setopnModal(false)
->>>>>>> bf1f23bd1649fb5c730402f9666c0382f3205502
-                    toast.success(decodedtoken.Name + " " + "login successfully")
-                }
-                   
-                }else if(res.data.Message){
-                   
-                        setError(res.data.Message);
-                  
+                        return navigate('/Dashboard/stats');
+                    } else {
+                        setopnModal(false)
+
+                        toast.success(decodedtoken.Name + " " + "login successfully")
+                    }
+
+                } else if (res.data.Message) {
+
+                    setError(res.data.Message);
+
                 }
             }).catch(error => {
                 console.log(error)
@@ -304,6 +299,7 @@ const StoreContextProvider = (props) => {
         addToCart,
         removeCartItem,
         Message,
+        setMessage,
         id,
         cartItems,
         incQuantity,

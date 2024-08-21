@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { StoreContext } from '../Context/Storecontext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function PlaceOrders() {
@@ -17,11 +18,12 @@ export default function PlaceOrders() {
     Zipcode: '',
     Phone: '',
   }
-  const { cartItems, user, UserId, url } = React.useContext(StoreContext)
+  const { cartItems, user, UserId, url, setMessage} = React.useContext(StoreContext)
   const [total, setTotal] = useState(0)
   const [Subtotal, setSubtotal] = useState(0)
   const [data, setdata] = useState(InitialState)
   const [error, setError] = useState()
+  const navigate = useNavigate();
 
   const subtotal = (Subtotal, total) => {
     let newSubtotal = 0;
@@ -110,8 +112,9 @@ export default function PlaceOrders() {
     if (response.data.success) {
       localStorage.removeItem('cart')
       const { session_url } = response.data;
+      setMessage(response.data.Message)
       window.location.replace(session_url)
-      toast.success(response.data.Message)
+    
 
     } else {
       alert('Error')
@@ -135,9 +138,9 @@ export default function PlaceOrders() {
     }
     const response = await axios.post(`${url}/api/order/cashondelivery`, OrderData)
     if (response.data.success) {
+      setMessage(response.data.Message)
       localStorage.removeItem('cart')
-      window.location.replace('/myorders')
-      toast.success(response.data.Message)
+     return navigate('/myorders')
 
     } else {
       alert('Error')

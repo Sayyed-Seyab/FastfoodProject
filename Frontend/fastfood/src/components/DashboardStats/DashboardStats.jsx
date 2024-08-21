@@ -3,8 +3,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { StoreContext } from '../Context/Storecontext';
 import {CircularProgress } from '@mui/material';
 import './style.css'
+import { toast } from 'react-toastify';
 export default function DashboardStats() {
-  const { user, UserOrders, GetOrders, food,getfood,loading,Orderloading } = useContext(StoreContext);
+  const { user, UserOrders, GetOrders, food,getfood,loading,Orderloading,Message } = useContext(StoreContext);
 
   const [totalFood, setTotalFood] = useState(0);
   const [cancelledOrders, setCancelledOrders] = useState(0);
@@ -17,7 +18,10 @@ export default function DashboardStats() {
       GetOrders();
       getfood();
     }
-  }, [user]);
+    if(Message){
+      toast.success(Message)
+    }
+  }, [user,Message]);
 
   useEffect(() => {
     if (UserOrders.length) {
