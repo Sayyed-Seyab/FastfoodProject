@@ -188,6 +188,7 @@ const StoreContextProvider = (props) => {
 
 
                     if (decodedtoken.role === 'admin'){
+                          setMessage(decodedtoken.Name+ " " + "login successfully")
                         setopnModal(false)
                   return  navigate('/Dashboard/stats');
                 }else{
