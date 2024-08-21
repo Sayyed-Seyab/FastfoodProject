@@ -136,7 +136,7 @@ const StoreContextProvider = (props) => {
                     setsignupdata(SignUpObj)
                     setopensinUpModal(false)
                     console.log(res.data.token)
-                    toast.success('Account created successfully')
+                   setMessage('Account created successfully')
                 }
             }).catch(error => {
                 console.log(error)
