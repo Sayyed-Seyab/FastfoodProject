@@ -160,11 +160,11 @@ const StoreContextProvider = (props) => {
                     setUser(decodedtoken.user);
                     setRole(decodedtoken.role);
                     setImage(decodedtoken.Image);
-                    setopnModal(false)
                     if (decodedtoken.role === 'admin'){
-                        
+                         setopnModal(false)
                   return  navigate('/Dashboard/stats');
                 }else{
+                         setopnModal(false)
                     toast.success(decodedtoken.Name + " " + "login successfully")
                 }
                    
