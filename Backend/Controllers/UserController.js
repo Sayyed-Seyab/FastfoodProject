@@ -13,7 +13,7 @@ const creatToken = (id, Name, role,Image)=>{
 
 }
 const loginUser = async(req, res)=>{
-    const {Email,Password} = req.body;
+    const {Email, Password}= req.body;
     try{
         const user = await UserModel.findOne({Email});
         if(!user){
@@ -27,7 +27,7 @@ const loginUser = async(req, res)=>{
         res.cookie('token',token,{
             httpOnly:true,
         })
-        return res.json({success:true, token})
+       return res.json({success:true, token})
        
        
     }catch (error){
