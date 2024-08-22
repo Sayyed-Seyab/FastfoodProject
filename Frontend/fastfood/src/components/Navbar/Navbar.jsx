@@ -198,10 +198,11 @@ function Navbar() {
     };
     React.useEffect(() => {
       getToken();
-      if(Message){
-        toast.success(Message)
-      }
-    }, [Message])
+      if(role === 'user'){
+        if(Message){
+          toast.success(Message)
+        }
+    }, [Message,role])
 
     return (
       <div >
