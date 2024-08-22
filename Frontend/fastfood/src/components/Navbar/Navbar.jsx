@@ -202,6 +202,7 @@ function Navbar() {
         if(Message){
           toast.success(Message)
         }
+      }
     }, [Message,role])
 
     return (
